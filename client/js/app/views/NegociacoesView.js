@@ -1,9 +1,10 @@
-class NegociacoesView{
-    constructor(elemento){
+class NegociacoesView extends View{
 
-        this._elemento = elemento;
+    constructor(elemento) {
+        super(elemento);
     }
-    _template(model){
+
+    template(model){
 
         return `
                 <table class="table table-hover table-bordered">
@@ -38,16 +39,12 @@ class NegociacoesView{
             </table>
         `;
     }
-    update(model){
 
-        this._elemento.innerHTML = this._template(model);
-
-    }
 }
 
 /*
 (function(){
-                                let total = 0;
-                                model.negociacoes.forEach(n => total+= n.volume);
-                                return total;
-                            })()*/ 
+    let total = 0;
+    model.negociacoes.forEach(n => total+= n.volume);
+    return total;
+})()*/ 
